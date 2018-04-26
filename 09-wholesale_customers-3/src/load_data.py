@@ -7,6 +7,7 @@ from sklearn.preprocessing import StandardScaler
 customer_df = pd.read_csv('data/Wholesale_customers_data.csv')
 customer_df.drop(['Channel', 'Region'], axis=1, inplace=True)
 
+# The following scaling is the the same as (X-mean)/(std. dev)
 scaler = StandardScaler()
 scaler.fit(customer_df)
 customer_sc = scaler.transform(customer_df)
